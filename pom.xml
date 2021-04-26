@@ -24,21 +24,23 @@
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.0.0</version>
 			</plugin>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-				<sharedLibraries>
-                        <sharedLibrary>
-                            <groupId>mysql</groupId>
-                            <artifactId>mysql-connector-java</artifactId>
-                        </sharedLibrary>
-                    </sharedLibraries>
-                <classifier>mule-application</classifier>
-                </configuration>
-			</plugin>
+			         <!-- Deploy to Cloudhub -->
+        		 <plugin>
+          			<groupId>org.mule.tools.maven</groupId>
+            			<artifactId>mule-maven-plugin</artifactId>
+           			<version>3.4.2</version>
+            			<configuration>
+		        		<cloudHubDeployment>
+		            			<uri>https://anypoint.mulesoft.com</uri>
+		            			<muleVersion>${mule.version}</muleVersion>
+		            			<username>vathsastud3</username>
+		            			<password>Kaushal@2017</password>
+		            			<applicationName>First_APP</applicationName>
+		            			<environment>SANDBOX</environment>
+		        		</cloudHubDeployment>
+		    		</configuration>
+         		</plugin>
+
 		</plugins>
 	</build>
 
